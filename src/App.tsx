@@ -45,6 +45,7 @@ const App = () => {
               type="number"
               placeholder="Digite a sua altura. Ex: 1.5(em metros)"
               value={heightField > 0 ? heightField : ''}
+              disabled={showItem ? true : false}
               onChange={e => setHeightField(e.target.valueAsNumber)}
            />
            
@@ -52,10 +53,13 @@ const App = () => {
               type="number"
               placeholder="Digite o seu peso. Ex: 75.3(em kg)"
               value={weight > 0 ? weight : ''}
+              disabled={showItem ? true : false}
               onChange={e => setWeight(e.target.valueAsNumber)}
            />
 
-           <button onClick={handleCalculateButton}>Calcular</button>
+           <button onClick={handleCalculateButton}
+           disabled={showItem ? true : false}
+           >Calcular</button>
 
 
         </div>
